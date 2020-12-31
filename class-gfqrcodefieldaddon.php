@@ -64,7 +64,7 @@ class GFQRcodeFieldAddOn extends GFAddOn {
 				'version' => $this->_version,
 				'deps'    => array('jquery'),
 				'enqueue' => array(
-					array('field_types' => array('qrcode')),
+					array('field_types' => array('gfqrcode')),
 				),
 				'in_footer' => 'in_footer',
 			),
@@ -74,7 +74,7 @@ class GFQRcodeFieldAddOn extends GFAddOn {
 				'version' => $this->_version,
 				'deps'    => array( 'jquery', 'html5-qrcode' ),
 				'enqueue' => array(
-					array( 'field_types' => array( 'qrcode' ) ),
+					array( 'field_types' => array('gfqrcode' ) ),
 				),
 				'in_footer' => 'in_footer',
 			),
@@ -96,7 +96,7 @@ class GFQRcodeFieldAddOn extends GFAddOn {
 				'src'     => $this->get_base_url() . '/css/my_styles.css',
 				'version' => $this->_version,
 				'enqueue' => array(
-					array( 'field_types' => array( 'simple' ) )
+					array( 'field_types' => array('gfqrcode' ) )
 				)
 			)
 		);

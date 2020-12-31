@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Gravity Forms html5-qrcode Field Add-On
-Plugin URI: http://www.gravityforms.com
-Description: A simple add-on to demonstrate how to use the Add-On Framework to include a new field html5-qrcode type.
-Version: 1.0
+Plugin URI: https://github.com/evgrezanov/gf-qrcodefieldaddon
+Description: Add-on include a new field html5-qrcode reader type.
+Version: 1.1
 Author: Evgeniy Rezanov
-Author URI: http://www.rocketgenius.com
+Author URI: https://www.upwork.com/freelancers/~01ea58721977099d53
 Text Domain: gf-qrcodefieldaddon
 Domain Path: /languages
 
@@ -27,7 +27,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
 
-define( 'GF_QRCODE_FIELD_ADDON_VERSION', '1.0' );
+define( 'GF_QRCODE_FIELD_ADDON_VERSION', '1.1' );
 
 add_action( 'gform_loaded', array('GF_Qrcode_Field_AddOn_Bootstrap', 'load' ), 5 );
 
