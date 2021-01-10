@@ -40,11 +40,11 @@ class QRcode_GF_Field extends GF_Field {
 	function get_form_editor_field_settings() {
 		return array(
 			'label_setting',
-			'description_setting',
+			/*'description_setting',
 			'rules_setting',
 			'input_class_setting',
 			'css_class_setting',
-			'size_setting',
+			'size_setting',*/
 			'admin_label_setting',
 			'visibility_setting',
 			'conditional_logic_field_setting',
