@@ -4,13 +4,13 @@ GFForms::include_addon_framework();
 
 class GFQRcodeFieldAddOn extends GFAddOn {
 
-	protected $_version = GF_QRCODE_FIELD_ADDON_VERSION;
+	protected $_version = QRRFGF_PLUGIN_VERSION;
 	protected $_min_gravityforms_version = '1.9';
-	protected $_slug = 'qrcodefieldaddon';
-	protected $_path = 'gf-qrcodefieldaddon/qrcodefieldaddon.php';
-	protected $_full_path = __FILE__;
-	protected $_title = 'Gravity Forms HTML5 QRcode Field Add-On';
-	protected $_short_title = 'HTML5 QRcode Field Add-On';
+	protected $_slug = QRRFGF_DOMAIN;
+	protected $_path = QRRFGF_PLUGIN_DIR;
+	protected $_full_path = QRRFGF_PLUGIN_FILE;
+	protected $_title = 'Gravity Forms HTML5 QRcode Reader Field Add-On';
+	protected $_short_title = 'HTML5 QRcode Reader';
 
 	/**
 	 * @var object $_instance If available, contains an instance of this class.
@@ -64,7 +64,7 @@ class GFQRcodeFieldAddOn extends GFAddOn {
 				'version' => $this->_version,
 				'deps'    => array('jquery'),
 				'enqueue' => array(
-					array('field_types' => array('qrcode')),
+					array('field_types' => array('qrcode-reader')),
 				),
 				'in_footer' => 'in_footer',
 			),
@@ -74,7 +74,7 @@ class GFQRcodeFieldAddOn extends GFAddOn {
 				'version' => $this->_version,
 				'deps'    => array( 'jquery', 'html5-qrcode' ),
 				'enqueue' => array(
-					array( 'field_types' => array( 'qrcode' ) ),
+					array( 'field_types' => array('qrcode-reader') ),
 				),
 				'in_footer' => 'in_footer',
 			),
@@ -96,7 +96,7 @@ class GFQRcodeFieldAddOn extends GFAddOn {
 				'src'     => $this->get_base_url() . '/css/my_styles.css',
 				'version' => $this->_version,
 				'enqueue' => array(
-					array( 'field_types' => array( 'simple' ) )
+					array( 'field_types' => array('qrcode-reader' ) )
 				)
 			)
 		);

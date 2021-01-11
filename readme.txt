@@ -1,4 +1,4 @@
-**QR-code reader field For Gravity Forms**
+=== QR-code reader field For Gravity Forms  ===
 Tags: QR Reader, Gravity Forms, Gravity Forms QR Reader
 Tested up to: 5.4
 Requires PHP: 5.0
@@ -34,3 +34,7 @@ Using **Gravity Forms for slider** to setup digit number with min and max value 
 <li><a href="https://wordpress.org/plugins/multiple-shipping-address-woocommerce/" target="_blank" rel="noreferrer noopener">Saved Addresses For Woocommerce</a></li>
 <li><a href="https://wordpress.org/plugins/quick-view-product-for-woocommerce/" target="_blank" rel="noreferrer noopener">Quick View Woocommerce Product</a></li>
 </ol>
+
+
+
+

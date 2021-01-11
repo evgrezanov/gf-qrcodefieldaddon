@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     if (typeof datasetMode !== "undefined" && datasetMode !== null) {
         var mode = datasetMode.dataset.qrmode;
-        
+
         if (mode == 'pro') {
             // Create instance of the object. The only argument is the "id" of HTML element created above.
             const html5QrCode = new Html5Qrcode("qr-reader");
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         // Stop failed, handle it.
                         console.log(`Stop failed, handle it scanning, error: ${err}`);
                     });
-                    
+
                 },
                 errorMessage => {
                     // parse error, ideally ignore it. For example:
@@ -40,39 +40,39 @@ document.addEventListener('DOMContentLoaded', function () {
                 .catch(err => {
                     // Start failed, handle it. For example,
                     console.log(`Unable to start scanning, error: ${err}`);
-            });
+                });
         }
 
-        if (mode == 'lite'){
-            docReady(function () {
-                var resultContainer = document.getElementById('qr-reader-results');
-                var lastResult, countResults = 0;
-                //var resultInput = document.getElementById('qrcode-result');
+        if (mode == 'lite') {
+            var resultContainer = document.getElementById('qr-reader-results');
+            var lastResult, countResults = 0;
 
-                var html5QrcodeScanner = new Html5QrcodeScanner(
-                    "qr-reader", { fps: 10, qrbox: 250 });
+            var html5QrcodeScanner = new Html5QrcodeScanner(
+                "qr-reader",
+                { fps: 10, qrbox: 250 }
+            );
 
-                function onScanSuccess(qrCodeMessage) {
-                    if (qrCodeMessage !== lastResult) {
-                        ++countResults;
-                        lastResult = qrCodeMessage;
-                        resultContainer.innerHTML += `<div>[${countResults}] - ${qrCodeMessage}</div>`;
-                        resultInput.value = qrCodeMessage;
-                        // Optional: To close the QR code scannign after the result is found
-                        html5QrcodeScanner.clear();
-                        resultInput.style.display = "block";
-                    }
+            function onScanSuccess(qrCodeMessage) {
+                if (qrCodeMessage !== lastResult) {
+                    ++countResults;
+                    lastResult = qrCodeMessage;
+                    //resultContainer.innerHTML += `<div>[${countResults}] - ${qrCodeMessage}</div>`;
+                    resultInput.value = qrCodeMessage;
+                    // Optional: To close the QR code scannign after the result is found
+                    //html5QrcodeScanner.clear();
+                    resultInput.style.display = "block";
+                    //resultContainer.style.display = "none";
                 }
+            }
 
-                // Optional callback for error, can be ignored.
-                function onScanError(qrCodeError) {
-                    // This callback would be called in case of qr code scan error or setup error.
-                    // You can avoid this callback completely, as it can be very verbose in nature.
-                }
+            // Optional callback for error, can be ignored.
+            function onScanError(qrCodeError) {
+                // This callback would be called in case of qr code scan error or setup error.
+                // You can avoid this callback completely, as it can be very verbose in nature.
+            }
 
-                html5QrcodeScanner.render(onScanSuccess, onScanError);
-            });
+            html5QrcodeScanner.render(onScanSuccess, onScanError);
         }
     }
-
+    
 }, false);

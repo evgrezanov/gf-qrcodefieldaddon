@@ -9,7 +9,7 @@ class QRcode_GF_Field extends GF_Field {
 	/**
 	 * @var string $type The field type.
 	 */
-	public $type = 'qrcode';
+	public $type = 'qrcode-reader';
 
 	/**
 	 * Return the field title, for use in the form editor.
@@ -17,7 +17,7 @@ class QRcode_GF_Field extends GF_Field {
 	 * @return string
 	 */
 	public function get_form_editor_field_title() {
-		return esc_attr__( 'QRcode reader', 'gf_qrcodefieldaddon' );
+		return esc_attr__( 'QRcode reader', 'gravityform' );
 	}
 
 	/**
@@ -40,11 +40,11 @@ class QRcode_GF_Field extends GF_Field {
 	function get_form_editor_field_settings() {
 		return array(
 			'label_setting',
-			/*'description_setting',
+			'description_setting',
 			'rules_setting',
 			'input_class_setting',
 			'css_class_setting',
-			'size_setting',*/
+			'size_setting',
 			'admin_label_setting',
 			'visibility_setting',
 			'conditional_logic_field_setting',
@@ -122,8 +122,8 @@ class QRcode_GF_Field extends GF_Field {
 		if ( is_admin() ):
 			$input = "<input name='input_{$id}' id='{$field_id}' type='text' value='{$value}' class='{$class}' {$tabindex} {$logic_event} {$placeholder_attribute} {$required_attribute} {$invalid_attribute} {$disabled_text}/>";
 		else:
-			$input = '<div style="width: 100%" id="qr-reader" data-qrmode="pro" ></div><div id="qr-reader-results"></div><input name="qrcode-result" id="qrcode-result" type="text"/>';
-			//$input .= "<input name='input_{$id}' id='{$field_id}' type='text' value='{$value}' class='{$class}' {$tabindex} {$logic_event} {$placeholder_attribute} {$required_attribute} {$invalid_attribute} {$disabled_text}/>";
+			$input 	= "<input autofocus style='display: none' name='input_{$id}' id='qrcode-result' type='search' value='{$value}' class='{$class}' {$tabindex} {$logic_event} {$placeholder_attribute} {$required_attribute} {$invalid_attribute} {$disabled_text}/>";
+			$input .= '<div id="qr-reader" data-qrmode="lite"></div>';
 		endif;
 		
 		return sprintf( "<div class='ginput_container ginput_container_%s'>%s</div>", $this->type, $input );
